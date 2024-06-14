@@ -1,0 +1,485 @@
+{"intents": [
+        {
+        "tag": "Cuts",
+        "patterns": {
+          "en": ["What to do if Cuts?", "How to cure Cuts?", "Which medicine to apply for Cuts?", "what to apply on cuts?", "Cuts"],
+          "tr": ["Kesiklerde ne yapmalı?", "Kesikler nasıl tedavi edilir?", "Kesiklere hangi ilaç sürülmeli?", "Kesiklere ne sürülmeli?", "Kesikler"]
+        },
+        "responses": {
+          "en": ["Wash the cut properly to prevent infection and stop the bleeding by applying pressure for 1-2 minutes until bleeding stops. Apply Petroleum Jelly to make sure that the wound is moist for quick healing. Finally cover the cut with a sterile bandage. Pain relievers such as acetaminophen can be applied."],
+          "tr": ["Kesikleri enfeksiyonu önlemek için düzgün yıkayın ve kanamayı durdurmak için 1-2 dakika boyunca baskı uygulayın. Hızlı iyileşme için yaranın nemli kalmasını sağlamak amacıyla Petrol Jel'i sürün. Son olarak kesikleri steril bir bandaj ile örtün. Asetaminofen gibi ağrı kesiciler uygulanabilir."]
+        },
+        "context_set": ""
+        },
+        {
+        "tag": "greeting",
+        "patterns": {
+          "en": ["Hi", "How are you", "Is anyone there?", "Hello", "What's up"],
+          "tr": ["Merhaba", "Nasılsın", "Orada biri var mı?", "Selam", "Naber"]
+        },
+        "responses": {
+          "en": ["Hi, I am your paramedic assistant"],
+          "tr": ["Merhaba, ben sizin ilk yardım asistanınızım"]
+        },
+        "context_set": ""
+        },              
+        {
+          "tag": "goodbye",
+          "patterns": {
+            "en": ["cya", "See you later", "Goodbye", "I am Leaving", "Have a Good day", "bye"],
+            "tr": ["görüşürüz", "Sonra görüşürüz", "Hoşça kal", "Ayrılıyorum", "İyi günler", "güle güle"]
+          },
+          "responses": {
+            "en": ["Sad to see you go :(", "Talk to you later", "Goodbye!"],
+            "tr": ["Gitmen üzücü :(", "Sonra konuşuruz", "Hoşça kal!"]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "Abrasions",
+          "patterns": {
+            "en": ["how do you treat abrasions?", "Do Abrasions cause scars?", "Abrasions", "what to do if abrasions?", "Which medicine to apply for abrasions?", "How to cure abrasions?"],
+            "tr": ["sürtünmeler nasıl tedavi edilir?", "Sürtünmeler yara izine neden olur mu?", "Sürtünmeler", "sürtünme olduğunda ne yapmalı?", "Sürtünmeye hangi ilaç sürülmeli?", "Sürtünmeler nasıl iyileştirilir?"]
+          },
+          "responses": {
+            "en": ["Begin with washed hands.Gently clean the area with cool to lukewarm water and mild soap. Remove dirt or other particles from the wound using sterilized tweezers.For a mild scrape that’s not bleeding, leave the wound uncovered.If the wound is bleeding, use a clean cloth or bandage, and apply gentle pressure to the area to stop any bleeding.Cover a wound that bled with a thin layer of topical antibiotic ointment, like Bacitracin, or a sterile moisture barrier ointment, like Aquaphor. Cover it with a clean bandage or gauze. Gently clean the wound and change the ointment and bandage once per day.Watch the area for signs of infection, like pain or redness and swelling. See your doctor if you suspect infection."],
+            "tr": ["Ellerinizi yıkayarak başlayın. Bölgeyi soğuk ila suyla ve hafif sabunla nazikçe temizleyin. Yaradan toprağı veya diğer parçacıkları sterilize edilmiş cımbızla çıkarın. Kanamayan hafif bir sıyrık için yarayı açık bırakın. Eğer yara kanıyorsa, temiz bir bez veya bandaj kullanın ve kanamayı durdurmak için bölgeye hafifçe basınç uygulayın. Kanayan yarayı, Bacitracin gibi topikal bir antibiyotik merhem veya Aquaphor gibi steril bir nem bariyeri merhemi ile ince bir katman halinde örtün. Üzerini temiz bir bandaj veya gazla örtün. Yarayı nazikçe temizleyin ve merhemi ve bandajı günde bir kez değiştirin. Enfeksiyon belirtileri için bölgeyi izleyin, ağrı veya kızarıklık ve şişlik gibi. Enfeksiyon şüpheleniyorsanız doktorunuza başvurun."]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "stings",
+          "patterns": {
+            "en": ["How do you treat Sting?", "Stings", "What to do if you get a sting?", "Which medicine to apply if sting?"],
+            "tr": ["Arı sokması nasıl tedavi edilir?", "Arı sokmaları", "Arı sokması durumunda ne yapmalı?", "Arı sokmasına hangi ilaç sürülmeli?"]
+          },
+          "responses": {
+            "en": ["Remove any stingers immediately. Some experts recommend scraping out the stinger with a credit card. Applying ice to the site may provide some mild relief. Apply ice for 20 minutes once every hour as needed. Wrap the ice in a towel or keep a cloth between the ice and skin to keep from freezing the skin. Taking an antihistamine such as diphenhydramine (Benadryl) or a nonsedating one such as loratadine (Claritin) will help with itching and swelling. Take acetaminophen (Tylenol) or ibuprofen (Motrin) for pain relief as needed. Wash the sting site with soap and water. Placing hydrocortisone cream on the sting can help relieve redness, itching, and swelling."],
+            "tr": ["Arı iğnesini hemen çıkarın. Bazı uzmanlar, iğneyi bir kredi kartıyla kazıyarak çıkarmayı önerir. Buz uygulamak hafif bir rahatlama sağlayabilir. Gerektiğinde her saat başı 20 dakika buz uygulayın. Cildin donmasını önlemek için buzu bir havlu içinde sarın veya buz ile cilt arasına bir bez koyun. Kaşıntı ve şişliği azaltmak için diphenhydramine (Benadryl) gibi bir antihistaminik veya loratadin (Claritin) gibi sedatif olmayan bir ilaç alabilirsiniz. Gerektiğinde ağrı kesici olarak asetaminofen (Tylenol) veya ibuprofen (Motrin) alın. Sokma yerini sabun ve su ile yıkayın. Sokma üzerine hidrokortizon kremi sürmek, kızarıklığı, kaşıntıyı ve şişliği hafifletmeye yardımcı olabilir."]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "Splinter",
+          "patterns": {
+            "en": ["How to remove Splinters", "How to cure Splinters?", "What to do if I have splinters?", "How do you bring a splinter to the surface?"],
+            "tr": ["İğneler nasıl çıkarılır?", "İğneler nasıl iyileştirilir?", "İğne battığında ne yapmalı?", "İğneyi yüzeye nasıl çıkarırsınız?"]
+          },
+          "responses": {
+            "en": ["1. SOAK IT IN EPSOM SALTS. Dissolve a cup of the salts into a warm bath and soak whatever part of the body has the splinter. Failing that, you can also put some of the salts onto a bandage pad and leave it covered for a day; this will eventually help bring the splinter to the surface. 2. VINEGAR OR OIL. Another simple way to draw out that stubborn splinter is to soak the affected area in oil (olive or corn) or white vinegar. Just pour some in a bowl and soak the area for around 20 to 30 minutes,"],
+            "tr": ["1. EPSOM TUZUNDA BEKLETİN. Bir fincan tuzu sıcak bir banyoya çözün ve iğne batan vücut kısmını bu suda bekletin. Başka bir yöntem olarak, bazı tuzları bir bandaj pedine koyup bir gün boyunca üzerini örtün; bu, iğneyi yüzeye çıkarmaya sonunda yardımcı olacaktır. 2. SİRKE YA DA YAĞ. İnatçı iğneyi çıkarmak için başka bir basit yöntem, etkilenen bölgeyi yağ (zeytin veya mısır) veya beyaz sirke ile ıslatmaktır. Birazını bir kaseye dökün ve bölgeyi yaklaşık 20 ila 30 dakika boyunca ıslatın."]
+          },
+          "context_set": ""
+        },        
+
+        {
+          "tag": "Sprains",
+          "patterns": {
+            "en": ["How do you treat a sprain?", "What to do if I get a sprain?", "Which cream to apply if I get a sprain?", "Which medicine to apply if I get a sprain?"],
+            "tr": ["Bir burkulma nasıl tedavi edilir?", "Bir burkulma yaşarsam ne yapmalıyım?", "Bir burkulmaya hangi krem ​​sürülmeli?", "Bir burkulmada hangi ilaç kullanılmalı?"]
+          },
+          "responses": {
+            "en": ["Use an ice pack or ice slush bath immediately for 15 to 20 minutes and repeat every two to three hours while you're awake. To help stop swelling, compress the ankle with an elastic bandage until the swelling stops. In most cases, pain relievers — such as ibuprofen (Advil, Motrin IB, others) or naproxen sodium (Aleve, others) or acetaminophen (Tylenol, others) are enough to manage the pain of a sprained ankle."],
+            "tr": ["15 ila 20 dakika boyunca hemen bir buz paketi veya buzlu su banyosu kullanın ve uyanık olduğunuz süre boyunca her iki ila üç saatte bir tekrarlayın. Şişliği durdurmak için, şişlik geçene kadar bileği elastik bir bandajla sıkıştırın. Çoğu durumda, ağrı kesiciler - ibuprofen (Advil, Motrin IB, diğerleri) veya naproksen sodyum (Aleve, diğerleri) veya asetaminofen (Tylenol, diğerleri) bir burkulmuş ayak bileği ağrısını yönetmek için yeterlidir."]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "Strains",
+          "patterns": {
+            "en": ["How do you treat a strain?", "What to do if I get a strain?", "Which cream to apply if I get a strain?", "Which medicine to apply if I get a strain?", "How do you diagnose a strain?", "Is heat or ice better for a pulled muscle?"],
+            "tr": ["Kas zorlanması nasıl tedavi edilir?", "Bir kas zorlanması yaşarsam ne yapmalıyım?", "Bir kas zorlanmasına hangi krem sürülmeli?", "Bir kas zorlanmasında hangi ilaç kullanılmalı?", "Kas zorlanması nasıl teşhis edilir?", "Çekilmiş bir kas için ısı mı buz mu daha iyidir?"]
+          },
+          "responses": {
+            "en": ["Rest, Ice, Compression, and Elevation can be used to cure strains. Avoid using your muscle for a few days, especially if movement causes an increase in pain. Also, apply ice immediately after injuring your muscle. This will minimize swelling. Don’t put ice directly on your skin. Use an ice pack or wrap ice in a towel. To reduce swelling, wrap the affected area with an elastic bandage until swelling comes down."],
+            "tr": ["Dinlenme, Buz, Sıkıştırma ve Yükseltme kas zorlanmalarını tedavi etmek için kullanılabilir. Özellikle hareket ağrıyı artırıyorsa, birkaç gün kasınızı kullanmaktan kaçının. Ayrıca, kasınızı incittikten hemen sonra buza başvurun. Bu, şişliği en aza indirecektir. Buzu doğrudan cildinize koymayın. Buz torbası kullanın veya buzu bir havlu içine sarın. Şişliği azaltmak için, şişlik inene kadar etkilenen bölgeyi elastik bir bandajla sarın."]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "Fever",
+          "patterns": {
+            "en": ["How do you treat a mild Fever?", "What to do if I get a mild fever?", "Which medicine to take if I get a mild fever?", "fever"],
+            "tr": ["Hafif ateş nasıl tedavi edilir?", "Hafif ateşim olursa ne yapmalıyım?", "Hafif ateşim için hangi ilacı almalıyım?", "ateş"]
+          },
+          "responses": {
+            "en": ["To treat a fever at home: 1)Drink plenty of fluids to stay hydrated. 2)Dress in lightweight clothing. 3)Use a light blanket if you feel chilled, until the chills end. 4)Take acetaminophen (Tylenol, others) or ibuprofen (Advil, Motrin IB, others). 5) Get medical help if the fever lasts more than five days in a row."],
+            "tr": ["Evde ateşi tedavi etmek için: 1) Hidratlı kalmak için bol sıvı tüketin. 2) Hafif giysiler giyin. 3) Üşüyorsanız, titreme geçene kadar hafif bir battaniye kullanın. 4) Asetaminofen (Tylenol, diğerleri) veya ibuprofen (Advil, Motrin IB, diğerleri) alın. 5) Ateş beş günden fazla sürerse tıbbi yardım alın."]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "Nasal Congestion",
+          "patterns": {
+            "en": ["How do you treat nasal Congestion?", "What to do if I get a nasal congestion?", "Which medicine to take if I have a nasal congestion?", "What to do if I have a blocked nose?", "How do you treat a blocked nose?", "How long does nasal congestion last?"],
+            "tr": ["Burun tıkanıklığı nasıl tedavi edilir?", "Burun tıkanıklığım olursa ne yapmalıyım?", "Burun tıkanıklığım için hangi ilacı almalıyım?", "Burnum tıkandığında ne yapmalıyım?", "Tıkalı burnu nasıl tedavi edersiniz?", "Burun tıkanıklığı ne kadar sürer?"]
+          },
+          "responses": {
+            "en": ["When you’re stuffed up, focus on keeping your nasal passages and sinuses moist. To keep your nasal passages moist, you can: 1)Use a humidifier or vaporizer. 2)Drink lots of fluids. This will thin out your mucus, which could help prevent blocked sinuses. 3)Place a warm, wet towel on your face. It may relieve discomfort and open your nasal passages."],
+            "tr": ["Tıkanıklık olduğunda, burun geçişlerinizi ve sinüslerinizi nemli tutmaya odaklanın. Burun geçişlerinizi nemli tutmak için: 1) Bir nemlendirici veya buhar makinesi kullanabilirsiniz. 2) Bol sıvı tüketin. Bu, mukusunuzu seyreltecek ve tıkanmış sinüsleri önlemeye yardımcı olabilir. 3) Yüzünüze ılık, nemli bir havlu koyun. Bu, rahatsızlığı hafifletebilir ve burun geçişlerinizi açabilir."]
+          },
+          "context_set": ""
+        },        
+
+        {
+          "tag": "Cough",
+          "patterns": {
+            "en": ["How to cure cough?", "How do you treat cough?", "What to do if I get a cough?", "Which medicine to take if I get cough?", "How do you get rid of cough?"],
+            "tr": ["Öksürük nasıl tedavi edilir?", "Öksürüğü nasıl tedavi edersiniz?", "Öksürüğüm olursa ne yapmalıyım?", "Öksürük için hangi ilacı almalıyım?", "Öksürükten nasıl kurtulurum?"]
+          },
+          "responses": {
+            "en": ["1) Honey: Use honey to treat a cough, mix 2 teaspoons (tsp) with warm water or an herbal tea. Drink this mixture once or twice a day. Do not give honey to children under 1 year of age. 2) Ginger: Brew up a soothing ginger tea by adding 20–40 grams (g) of fresh ginger slices to a cup of hot water. Allow to steep for a few minutes before drinking. Add honey or lemon juice to improve the taste and further soothe a cough. 3) Fluids: Staying hydrated is vital for those with a cough or cold. Research indicates that drinking liquids at room temperature can alleviate a cough, runny nose, and sneezing."],
+            "tr": ["1) Bal: Öksürüğü tedavi etmek için bal kullanın, 2 çay kaşığı balı ılık su veya bitki çayı ile karıştırın. Bu karışımı günde bir veya iki kez için. 1 yaşın altındaki çocuklara bal vermeyin. 2) Zencefil: Bir fincan sıcak suya 20-40 gram taze zencefil dilimleri ekleyerek rahatlatıcı bir zencefil çayı demleyin. İçmeden önce birkaç dakika demlemeye bırakın. Tadı iyileştirmek ve öksürüğü daha da yatıştırmak için bal veya limon suyu ekleyin. 3) Sıvılar: Öksürük veya soğuk algınlığı olanlar için hidrasyon çok önemlidir. Araştırmalar, oda sıcaklığında sıvı içmenin öksürük, burun akıntısı ve hapşırmayı hafifletebileceğini göstermektedir."]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "Sore Throat",
+          "patterns": {
+            "en": ["How do you treat sore throat?", "What to do if I get a sore throat?", "Which medicine to take if I get a sore throat?", "How to cure sore throat?"],
+            "tr": ["Boğaz ağrısı nasıl tedavi edilir?", "Boğazım ağrırsa ne yapmalıyım?", "Boğaz ağrısı için hangi ilacı almalıyım?", "Boğaz ağrısı nasıl iyileştirilir?"]
+          },
+          "responses": {
+            "en": ["1) Make sure you get plenty of rest and drink a lot of fluids. 2) Inhale steam, run hot water in a sink. Drape a towel over you to trap the steam, and have the person lean over the sink with the water running. Tell him to breathe deeply through his mouth and nose for 5 to 10 minutes. Repeat several times a day. 3) Have him sip chicken broth or warm tea with honey. Don’t give honey to a child under 12 months of age."],
+            "tr": ["1) Bol bol dinlendiğinizden ve bol sıvı tükettiğinizden emin olun. 2) Buhar soluyun, lavaboda sıcak su akıtın. Buharı hapsetmek için üzerine bir havlu örtün ve kişinin suyun aktığı lavabonun üzerine eğilmesini sağlayın. Ona 5 ila 10 dakika boyunca ağzı ve burnundan derin nefes almasını söyleyin. Günde birkaç kez tekrarlayın. 3) Ona tavuk suyu veya ballı sıcak çay içirin. 12 aydan küçük bir çocuğa bal vermeyin."]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "Gastrointestinal problems",
+          "patterns": {
+            "en": ["How do you treat gas problems?", "What to do if I have gastrointestinal problems?", "Which medicine to take if I get gas problem?", "How to cure gas problems?"],
+            "tr": ["Gaz problemleri nasıl tedavi edilir?", "Gastrointestinal problemlerim olursa ne yapmalıyım?", "Gaz problemi için hangi ilacı almalıyım?", "Gaz problemleri nasıl iyileştirilir?"]
+          },
+          "responses": {
+            "en": ["1) Replenish body fluids. 2) Do not take antidiarrheal drugs or laxatives or pain medication, unless specified by a medical professional. 3) Taking antacids may help, per recommendation of a healthcare professional. 4) If prone to frequent heartburns, seek medical help. 5) Taking meals that are not spicy regularly can relieve ulcer pains. 6) Seek medical help if conditions persist or continue to worsen."],
+            "tr": ["1) Vücut sıvılarını yenileyin. 2) Bir tıbbi uzman tarafından belirtilmedikçe antidiyareik ilaçlar, müshiller veya ağrı kesiciler almayın. 3) Bir sağlık uzmanının önerisi üzerine antasit almak yardımcı olabilir. 4) Sık sık mide yanması yaşıyorsanız, tıbbi yardım alın. 5) Düzenli olarak baharatlı olmayan yemekler yemek, ülser ağrılarını hafifletebilir. 6) Şartlar devam ederse veya kötüleşirse tıbbi yardım alın."]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "Skin problems",
+          "patterns": {
+            "en": ["How do you treat skin problems?", "What to do if I get a skin allergy?", "Which medicine to take if I get a skin allergy?", "How to cure skin allergy?"],
+            "tr": ["Cilt problemleri nasıl tedavi edilir?", "Cilt alerjim olursa ne yapmalıyım?", "Cilt alerjisi için hangi ilacı almalıyım?", "Cilt alerjisi nasıl iyileştirilir?"]
+          },
+          "responses": {
+            "en": ["1) Hydrocortisone cream. 2) Ointments like calamine lotion. 3) Antihistamines. 4) Cold compresses. 5) Oatmeal baths. 6) Talk to your doctor about what's best for your specific rash."],
+            "tr": ["1) Hidrokortizon kremi. 2) Kalamin losyonu gibi merhemler. 3) Antihistaminikler. 4) Soğuk kompresler. 5) Yulaf ezmesi banyoları. 6) Spesifik döküntünüz için en iyi olanı doktorunuzla konuşun."]
+          },
+          "context_set": ""
+        },        
+
+        {
+          "tag": "Abdonominal Pain",
+          "patterns": {
+            "en": ["How do you treat Abdonominal Pain?", "What to do if I get a Abdonominal Pain?", "Which medicine to take if I get a Abdonominal Pain?", "How to cure Abdonominal Pain?"],
+            "tr": ["Karın ağrısı nasıl tedavi edilir?", "Karın ağrısı yaşarsam ne yapmalıyım?", "Karın ağrısı için hangi ilacı almalıyım?", "Karın ağrısı nasıl iyileştirilir?"]
+          },
+          "responses": {
+            "en": ["1) Provide clear fluids to sip, such as water, broth, or fruit juice diluted with water. 2) Serve bland foods, such as saltine crackers, plain bread, dry toast, rice, gelatin, or applesauce. 3) Avoid spicy or greasy foods and caffeinated or carbonated drinks until 48 hours after all symptoms have gone away."],
+            "tr": ["1) Su, et suyu veya su ile seyreltilmiş meyve suyu gibi içilecek berrak sıvılar sağlayın. 2) Tuzlu krakerler, sade ekmek, kuru tost, pirinç, jelatin veya elma püresi gibi hafif yiyecekler servis edin. 3) Tüm semptomlar geçene kadar 48 saat boyunca baharatlı veya yağlı yiyeceklerden ve kafeinli veya gazlı içeceklerden kaçının."]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "Bruises",
+          "patterns": {
+            "en": ["How do you treat Bruises?", "What to do if I get a Bruise?", "Which medicine to take if I get a Bruise?", "How to cure Bruises?"],
+            "tr": ["Morarmalar nasıl tedavi edilir?", "Morarmam olursa ne yapmalıyım?", "Morarma için hangi ilacı almalıyım?", "Morarmalar nasıl iyileştirilir?"]
+          },
+          "responses": {
+            "en": ["1) Ice the bruise with an ice pack wrapped in a towel. 2) Leave it in place for 10 to 20 minutes. 3) Repeat several times a day for a day or two as needed. 4) Compress the bruised area if it is swelling, using an elastic bandage."],
+            "tr": ["1) Morarmayı bir havluya sarılmış buz paketi ile buzlayın. 2) 10 ila 20 dakika boyunca yerinde bırakın. 3) Gerektiği gibi bir veya iki gün boyunca günde birkaç kez tekrarlayın. 4) Şişlik varsa morarmış bölgeyi elastik bir bandajla sıkıştırın."]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "Broken Toe",
+          "patterns": {
+            "en": ["How do you treat a Broken Toe?", "What to do if I get a Broken Toe?", "Which medicine to take if I get a Broken Toe?", "How to cure Broken Toe?"],
+            "tr": ["Kırık parmak nasıl tedavi edilir?", "Kırık parmak olursa ne yapmalıyım?", "Kırık parmak için hangi ilacı almalıyım?", "Kırık parmak nasıl iyileştirilir?"]
+          },
+          "responses": {
+            "en": ["1) To help decrease pain and swelling in a broken toe, elevate the foot, ice the injury, and stay off the foot. 2) Depending on the severity of the fracture, the toe may need to be put back into place (reduced), and some compound toe fractures may require surgery. 3) Most broken toes heal without complications in six weeks."],
+            "tr": ["1) Kırık bir parmakta ağrı ve şişliği azaltmak için ayağı yükseltin, yarayı buzlayın ve ayağı kullanmayın. 2) Kırığın ciddiyetine bağlı olarak, parmak yerine oturtulması (redükte edilmesi) gerekebilir ve bazı bileşik parmak kırıkları ameliyat gerektirebilir. 3) Çoğu kırık parmak altı hafta içinde komplikasyon olmadan iyileşir."]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "Choking",
+          "patterns": {
+            "en": ["How do you treat Choking?", "What to do if I get a Choke?", "Which medicine to take if I get Choked?", "How to cure Choking?"],
+            "tr": ["Boğulma nasıl tedavi edilir?", "Boğulursam ne yapmalıyım?", "Boğulma için hangi ilacı almalıyım?", "Boğulma nasıl iyileştirilir?"]
+          },
+          "responses": {
+            "en": ["1) Encourage them to keep coughing to try to clear the blockage. 2) Ask them to try to spit out the object if it's in their mouth. 3) If coughing doesn't work, start back blows and abdominal thrusts."],
+            "tr": ["1) Tıkanıklığı temizlemeye çalışmak için öksürmeye devam etmeleri için onları teşvik edin. 2) Nesneyi ağızlarındaysa çıkarmaya çalışmaları için onları isteyin. 3) Öksürük işe yaramazsa, sırt darbelerine ve karın baskısına başlayın."]
+          },
+          "context_set": ""
+        },        
+
+        {
+          "tag": "Wound",
+          "patterns": {
+            "en": ["How do you treat a wound?", "What to do if I get a wound?", "Which medicine to take if I get wounded?", "How to cure a wound?"],
+            "tr": ["Yara nasıl tedavi edilir?", "Yaralanırsam ne yapmalıyım?", "Yaralandığımda hangi ilacı almalıyım?", "Yara nasıl iyileştirilir?"]
+          },
+          "responses": {
+            "en": ["1) Rinse the cut or wound with water and apply pressure with sterile gauze, a bandage, or a clean cloth. 2) If blood soaks through the bandage, place another bandage on top of the first and keep applying pressure. 3) Raise the injured body part to slow bleeding. 4) When bleeding stops, cover the wound with a new, clean bandage."],
+            "tr": ["1) Kesik veya yarayı su ile yıkayın ve steril gazlı bez, bandaj veya temiz bir bezle baskı uygulayın. 2) Eğer kan bandajdan sızarsa, ilk bandajın üzerine bir başka bandaj koyun ve baskı uygulamaya devam edin. 3) Kanamayı yavaşlatmak için yaralanmış vücut kısmını yükseltin. 4) Kanama durduğunda, yarayı yeni ve temiz bir bandajla örtün."]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "Diarrhea",
+          "patterns": {
+            "en": ["How do you treat diarrhea?", "What to do if I get diarrhea?", "Which medicine to take if I get diarrhea?", "How to cure diarrhea?"],
+            "tr": ["İshal nasıl tedavi edilir?", "İshal olursam ne yapmalıyım?", "İshal için hangi ilacı almalıyım?", "İshal nasıl iyileştirilir?"]
+          },
+          "responses": {
+            "en": ["1) Hydrating the body is essential for recovering from diarrhea. This causes the body to lose electrolytes such as sodium and chloride. 2) It is highly recommended to avoid dairy products, as they may worsen diarrhea in some people. 3) However, if diarrhea lasts for more than 2 days, seek medical advice to avoid complications."],
+            "tr": ["1) Vücudu hidrasyon sağlamak ishalden iyileşmek için esastır. Bu, vücudun sodyum ve klorür gibi elektrolitleri kaybetmesine neden olur. 2) Süt ürünlerinden kaçınılması şiddetle tavsiye edilir, çünkü bazı insanlarda ishali kötüleştirebilir. 3) Ancak, ishal 2 günden fazla sürerse, komplikasyonlardan kaçınmak için tıbbi tavsiye alın."]
+          },
+          "context_set": ""
+        },
+
+        {
+          "tag": "Headache",
+          "patterns": {
+            "en": ["How do you treat a mild headache?", "What to do if I get a mild headache?", "Which medicine to take if I have a mild headache?", "How to cure a mild headache?"],
+            "tr": ["Hafif baş ağrısı nasıl tedavi edilir?", "Hafif bir baş ağrısı yaşarsam ne yapmalıyım?", "Hafif bir baş ağrısı için hangi ilacı almalıyım?", "Hafif bir baş ağrısı nasıl iyileştirilir?"]
+          },
+          "responses": {
+            "en": ["Give ibuprofen (Advil, Motrin), aspirin, or acetaminophen (Tylenol) for pain. Avoid ibuprofen and other NSAIDs if the person has heart failure or kidney failure. Do not give aspirin to a child under age 18."],
+            "tr": ["Ağrı için ibuprofen (Advil, Motrin), aspirin veya asetaminofen (Tylenol) verin. Kişi kalp yetmezliği veya böbrek yetmezliği varsa ibuprofen ve diğer NSAID'lerden kaçının. 18 yaşından küçük bir çocuğa aspirin vermeyin."]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "Cold",
+          "patterns": {
+            "en": ["How do you treat a cold?", "What to do if I get a mild cold?", "Which medicine to take if I have a cold?", "How to cure cold?"],
+            "tr": ["Soğuk algınlığı nasıl tedavi edilir?", "Hafif bir soğuk algınlığı yaşarsam ne yapmalıyım?", "Soğuk algınlığı için hangi ilacı almalıyım?", "Soğuk algınlığı nasıl iyileştirilir?"]
+          },
+          "responses": {
+            "en": ["1) Keeping hydrated is absolutely vital to help 'flush' out the cold, as well as to break down congestion and keep your throat lubricated. 2) Vitamin C is extremely helpful when fighting infection, so at the first sign of a cold be sure to increase your intake by eating plenty of berries, citrus fruits, papayas, broccoli and red peppers which will help keep you protected. 3) When it comes to combating a cold, Vitamin D is essential in helping to regulate immune response."],
+            "tr": ["1) Hidratlı kalmak, soğuk algınlığını 'atmak' ve tıkanıklığı gidermek ve boğazınızı nemli tutmak için kesinlikle hayati öneme sahiptir. 2) Enfeksiyonla savaşırken C vitamini son derece yardımcıdır, bu yüzden soğuk algınlığının ilk belirtisinde bol miktarda meyve, narenciye, papaya, brokoli ve kırmızı biber yiyerek alımınızı artırdığınızdan emin olun, bu sizi korumaya yardımcı olacaktır. 3) Soğuk algınlığıyla mücadele söz konusu olduğunda, D vitamini bağışıklık yanıtını düzenlemeye yardımcı olmak için gereklidir."]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "Rash",
+          "patterns": {
+            "en": ["How do you treat rashes?", "What to do if I get a rash?", "Which medicine to take if I have a rash?", "How to cure rash?"],
+            "tr": ["Döküntüler nasıl tedavi edilir?", "Döküntüm olursa ne yapmalıyım?", "Döküntü için hangi ilacı almalıyım?", "Döküntü nasıl iyileştirilir?"]
+          },
+          "responses": {
+            "en": ["1) Olive oil helps in healing and promotes skin renewal given it is packed with vitamin E and antioxidants. It also soothes the skin and reduces itching. 2) Baking soda is useful in drying skin rashes as also in relieving itching and inflammation. 3) Aloe Vera: Thanks to its antibacterial, antifungal, anti-inflammatory and emollient properties, aloe vera is excellent for treating a number of skin ailments including rashes as also soothing the skin."],
+            "tr": ["1) Zeytinyağı, iyileşmeye yardımcı olur ve E vitamini ve antioksidanlar açısından zengin olduğu için cilt yenilenmesini teşvik eder. Ayrıca cildi yatıştırır ve kaşıntıyı azaltır. 2) Kabartma tozu, cilt döküntülerini kurutmada ve kaşıntı ve iltihaplanmayı hafifletmede yararlıdır. 3) Aloe Vera: Antibakteriyel, antifungal, anti-inflamatuar ve yumuşatıcı özellikleri sayesinde aloe vera, döküntüler dahil olmak üzere birçok cilt rahatsızlığını tedavi etmek ve cildi yatıştırmak için mükemmeldir."]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "snake bite",
+          "patterns": {
+            "en": ["How do you treat a snake bite?", "What to do if I get a snake bite?", "Which medicine to take if I get a snake bite?", "How to cure snake bite?", "I got bit by a snake"],
+            "tr": ["Yılan ısırığı nasıl tedavi edilir?", "Yılan ısırığı olursa ne yapmalıyım?", "Yılan ısırığı için hangi ilacı almalıyım?", "Yılan ısırığı nasıl iyileştirilir?", "Yılan beni ısırdı"]
+          },
+          "responses": {
+            "en": ["While waiting for medical help: 1) Move the person beyond striking distance of the snake. 2) Have the person lie down with wound below the heart. 3) Keep the person calm and at rest, remaining as still as possible to keep venom from spreading. 4) Cover the wound with loose, sterile bandage. 5) Remove any jewelry from the area that was bitten. 6) Remove shoes if the leg or foot was bitten."],
+            "tr": ["Tıbbi yardım beklerken: 1) Kişiyi yılanın saldırı mesafesinin ötesine taşıyın. 2) Kişiyi yarayı kalbin altına gelecek şekilde yatırın. 3) Zehirin yayılmasını önlemek için kişiyi sakin ve dinlenmiş halde tutun, mümkün olduğunca hareketsiz kalmasını sağlayın. 4) Yarayı gevşek, steril bir bandajla örtün. 5) Isırılan bölgeden herhangi bir mücevheri çıkarın. 6) Bacak veya ayak ısırıldıysa ayakkabıları çıkarın."]
+          },
+          "context_set": ""
+        },        
+
+        {
+          "tag": "animal bite",
+          "patterns": {
+            "en": ["How do you treat a animal bite?", "How do you treat a monkey bite?", "How do you treat a dog bite?", "What to do if I get a animal bite?", "Which medicine to take if I get a monkey bite?", "How to cure dog bite?", "I got bit by a dog"],
+            "tr": ["Hayvan ısırığı nasıl tedavi edilir?", "Maymun ısırığı nasıl tedavi edilir?", "Köpek ısırığı nasıl tedavi edilir?", "Hayvan ısırığı olursa ne yapmalıyım?", "Maymun ısırığı için hangi ilacı almalıyım?", "Köpek ısırığı nasıl iyileştirilir?", "Bir köpek tarafından ısırıldım"]
+          },
+          "responses": {
+            "en": ["1) Wash the wound with soap and warm water. 2) Gently press a clean cloth over the wound to stop the flow of blood. 3) Apply an antibacterial ointment to the wound. 4) Cover with a sterile bandage. 5) Watch for signs of infection. 6) Seek help if you suspect infection or possible exposure to rabies, or if the wound is severe."],
+            "tr": ["1) Yarayı sabun ve ılık su ile yıkayın. 2) Kan akışını durdurmak için yaraya nazikçe temiz bir bezle baskı yapın. 3) Yaraya antibakteriyel bir merhem uygulayın. 4) Steril bir bandajla örtün. 5) Enfeksiyon belirtilerini izleyin. 6) Enfeksiyondan şüpheleniyorsanız veya kuduz riskiniz varsa veya yara ciddi ise yardım alın."]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "Drowning",
+          "patterns": {
+            "en": ["What to do if someone is drowning?", "What to do if someone drowned?", "What steps to take if I see a drowning person?", "How to help a drowning person?"],
+            "tr": ["Birisi boğuluyorsa ne yapmalı?", "Birisi boğulmuşsa ne yapmalı?", "Boğulan birini görürsem hangi adımları atmalıyım?", "Boğulan birine nasıl yardım edilir?"]
+          },
+          "responses": {
+            "en": ["1) Place your ear next to the person's mouth and nose. Do you feel air on your cheek? 2) Look to see if the person's chest is moving. If the person is not breathing, check pulse. 3) Check the person's pulse for 10 seconds. If there is no pulse, start CPR."],
+            "tr": ["1) Kulağınızı kişinin ağzı ve burnunun yanına yerleştirin. Yanaklarınızda hava hissediyor musunuz? 2) Kişinin göğsünün hareket edip etmediğine bakın. Kişi nefes almıyorsa nabzını kontrol edin. 3) Kişinin nabzını 10 saniye kontrol edin. Nabız yoksa CPR'a başlayın."]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "CPR",
+          "patterns": {
+            "en": ["How to give CPR?", "What to do in a CPR?", "What steps to take in a CPR?", "How to help a drowning person in CPR?"],
+            "tr": ["CPR nasıl yapılır?", "CPR'da ne yapmalı?", "CPR'da hangi adımları atmalı?", "Boğulan bir kişiye CPR ile nasıl yardım edilir?"]
+          },
+          "responses": {
+            "en": ["1) For an adult or child, place the heel of one hand on the center of the chest at the nipple line. You can also push with one hand on top of the other. For an infant, place two fingers on the breastbone. 2) For an adult or child, press down at least 2 inches. Make sure not to press on ribs. For an infant, press down about 1 and 1/2 inches. Make sure not to press on the end of the breastbone. 3) Do chest compressions only, at the rate of 100-120 per minute or more. Let the chest rise completely between pushes. 4) Check to see if the person has started breathing."],
+            "tr": ["1) Yetişkin veya çocuk için, bir elinizin topuğunu göğsün ortasına, meme çizgisine yerleştirin. Diğer elinizle üst üste de bastırabilirsiniz. Bebek için, iki parmağınızı göğüs kemiğine yerleştirin. 2) Yetişkin veya çocuk için, en az 2 inç aşağı doğru bastırın. Kaburgalara bastırmamaya dikkat edin. Bebek için, yaklaşık 1 buçuk inç aşağı doğru bastırın. Göğüs kemiğinin ucuna bastırmamaya dikkat edin. 3) Sadece göğüs kompresyonları yapın, dakikada 100-120 kez veya daha fazla. İtmeler arasında göğsün tamamen yükselmesine izin verin. 4) Kişinin nefes alıp almadığını kontrol edin."]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "Fracture",
+          "patterns": {
+            "en": ["How do you treat a fracture?", "What to do if I get a fracture?", "Which medicine to take if I have a fracture?", "How to cure a fracture?"],
+            "tr": ["Kırık nasıl tedavi edilir?", "Kırık olursa ne yapmalıyım?", "Kırık için hangi ilacı almalıyım?", "Kırık nasıl iyileştirilir?"]
+          },
+          "responses": {
+            "en": ["1) Stop any bleeding. Apply pressure to the wound with a sterile bandage, a clean cloth or a clean piece of clothing. 2) Immobilize the injured area. Don't try to realign the bone or push a bone that's sticking out back in. If you've been trained in how to splint and professional help isn't readily available, apply a splint to the area above and below the fracture sites. Padding the splints can help reduce discomfort. 3) Apply ice packs to limit swelling and help relieve pain. Don't apply ice directly to the skin. Wrap the ice in a towel, piece of cloth or some other material. 4) Treat for shock. If the person feels faint or is breathing in short, rapid breaths, lay the person down with the head slightly lower than the trunk and, if possible, elevate the legs."],
+            "tr": ["1) Herhangi bir kanamayı durdurun. Yaraya steril bir bandaj, temiz bir bez veya temiz bir giysi parçası ile baskı uygulayın. 2) Yaralanan bölgeyi sabitleyin. Kemiği yeniden hizalamaya veya çıkmış bir kemiği geri itmeye çalışmayın. Alçı yapma konusunda eğitim aldıysanız ve profesyonel yardım hemen mevcut değilse, kırık bölgelerin üstüne ve altına bir atel uygulayın. Atel dolguları rahatsızlığı azaltmaya yardımcı olabilir. 3) Şişmeyi sınırlamak ve ağrıyı hafifletmek için buz paketleri uygulayın. Buzu doğrudan cilde uygulamayın. Buzu bir havlu, bez parçası veya başka bir malzeme ile sarın. 4) Şok tedavisi yapın. Kişi baygın hissediyorsa veya kısa, hızlı nefes alıyorsa, kişiyi başı gövdeden biraz daha aşağıda olacak şekilde yatırın ve mümkünse bacakları kaldırın."]
+          },
+          "context_set": ""
+        },
+
+
+        
+
+
+        {
+          "tag": "smalltalk_greeting",
+          "patterns": {
+            "en": ["Hello!", "Hi!", "Hey!", "Good day!", "Greetings!"],
+            "tr": ["Merhaba!", "Selam!", "Hey!", "İyi günler!", "Selamlar!"]
+          },
+          "responses": {
+            "en": ["Hello! How can I assist you today?", "Hi there! How can I help?", "Hey! What can I do for you?", "Good day! How can I assist?", "Greetings! How can I help you?"],
+            "tr": ["Merhaba! Bugün size nasıl yardımcı olabilirim?", "Selam! Size nasıl yardımcı olabilirim?", "Hey! Sizin için ne yapabilirim?", "İyi günler! Size nasıl yardımcı olabilirim?", "Selamlar! Size nasıl yardımcı olabilirim?"]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "smalltalk_goodbye",
+          "patterns": {
+            "en": ["Goodbye!", "See you later!", "Bye!", "Take care!", "Catch you later!"],
+            "tr": ["Hoşça kal!", "Görüşürüz!", "Güle güle!", "Kendine iyi bak!", "Sonra görüşürüz!"]
+          },
+          "responses": {
+            "en": ["Goodbye! Have a great day!", "See you later! Take care!", "Bye! Stay safe!", "Take care! See you soon!", "Catch you later! Have a good one!"],
+            "tr": ["Hoşça kal! İyi günler!", "Görüşürüz! Kendine iyi bak!", "Güle güle! Güvende kal!", "Kendine iyi bak! Yakında görüşürüz!", "Sonra görüşürüz! İyi günler!"]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "smalltalk_how_are_you",
+          "patterns": {
+            "en": ["How are you?", "How's it going?", "What's up?", "How are things?", "How have you been?"],
+            "tr": ["Nasılsın?", "Nasıl gidiyor?", "Naber?", "Nasıl işler?", "Nasılsın?"]
+          },
+          "responses": {
+            "en": ["I'm doing well, thank you! How can I assist you today?", "I'm great, thanks! How can I help?", "All good here! What about you?", "I'm fine, thank you! How can I assist?", "I've been good! How can I help you?"],
+            "tr": ["İyiyim, teşekkürler! Bugün size nasıl yardımcı olabilirim?", "Harikayım, teşekkürler! Size nasıl yardımcı olabilirim?", "Burada her şey yolunda! Siz nasılsınız?", "İyiyim, teşekkürler! Size nasıl yardımcı olabilirim?", "İyiydim! Size nasıl yardımcı olabilirim?"]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "smalltalk_how_are_you_response",
+          "patterns": {
+            "en": ["I'm doing well, What about you?", "Great, What about you?", "Great"],
+            "tr": ["İyiyim sen?", "İyiyim napıyon?", "Bende iyiyim"]
+          },
+          "responses": {
+            "en": ["I'm doing well, thank you! How can I assist you today?", "I'm great, thanks! How can I help?", "How can i help you?"],
+            "tr": ["İyiyim, teşekkürler! Bugün size nasıl yardımcı olabilirim?", "Harikayım, teşekkürler! Size nasıl yardımcı olabilirim?", "Mükemmel nasıl yardımcı olabilirim?"]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "smalltalk_thank_you",
+          "patterns": {
+            "en": ["Thank you!", "Thanks!", "I appreciate it!", "Thank you so much!", "Thanks a lot!"],
+            "tr": ["Teşekkürler!", "Sağol!", "Minnettarım!", "Çok teşekkür ederim!", "Çok sağol!"]
+          },
+          "responses": {
+            "en": ["You're welcome! How can I assist you further?", "No problem! Anything else you need?", "My pleasure! How can I help you?", "You're welcome! Need any more help?", "Anytime! How can I assist?"],
+            "tr": ["Rica ederim! Başka nasıl yardımcı olabilirim?", "Sorun değil! Başka bir şeye ihtiyacınız var mı?", "Benim için zevk! Size nasıl yardımcı olabilirim?", "Rica ederim! Daha fazla yardıma ihtiyacınız var mı?", "Her zaman! Size nasıl yardımcı olabilirim?"]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "smalltalk_what_is_your_name",
+          "patterns": {
+            "en": ["What is your name?", "Who are you?", "Can you tell me your name?", "What's your name?", "May I know your name?"],
+            "tr": ["Adınız nedir?", "Kimsiniz?", "Adınızı söyleyebilir misiniz?", "Adın ne?", "Adınızı öğrenebilir miyim?"]
+          },
+          "responses": {
+            "en": ["I'm your first aid assistant. How can I assist you today?", "I'm your health assistant. What can I do for you?", "I am here to help you with first aid. How can I assist?", "I'm your paramedic assistant. How can I help?", "I'm your first aid chatbot. What do you need?"],
+            "tr": ["Ben sizin ilk yardım asistanınızım. Bugün size nasıl yardımcı olabilirim?", "Ben sizin sağlık asistanınızım. Sizin için ne yapabilirim?", "Size ilk yardım konusunda yardımcı olmak için buradayım. Nasıl yardımcı olabilirim?", "Ben sizin ilk yardım chatbotunuzum. Nasıl yardımcı olabilirim?", "Ben sizin ilk yardım asistanınızım. Ne yapmamı istersiniz?"]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "smalltalk_what_are_you_doing",
+          "patterns": {
+            "en": ["What are you doing?", "What's going on?", "What are you up to?", "What's happening?", "What are you busy with?"],
+            "tr": ["Ne yapıyorsun?", "Ne oluyor?", "Ne ile meşgulsün?", "Ne var ne yok?", "Ne ile meşgulsün?"]
+          },
+          "responses": {
+            "en": ["I'm here to assist you with any first aid needs. How can I help?", "Just waiting to assist you. What do you need help with?", "I'm here to provide first aid assistance. What can I do for you?", "I'm here to help you with first aid. How can I assist?", "I'm your first aid assistant, ready to help. What do you need?"],
+            "tr": ["İlk yardım ihtiyaçlarınızda size yardımcı olmak için buradayım. Nasıl yardımcı olabilirim?", "Size yardımcı olmak için buradayım. Ne yardımı ihtiyacınız var?", "İlk yardım desteği sağlamak için buradayım. Sizin için ne yapabilirim?", "Size ilk yardım konusunda yardımcı olmak için buradayım. Nasıl yardımcı olabilirim?", "Ben sizin ilk yardım asistanınızım, yardıma hazır. Ne yapmamı istersiniz?"]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "smalltalk_how_old_are_you",
+          "patterns": {
+            "en": ["How old are you?", "What's your age?", "Can you tell me your age?", "How many years old are you?", "What is your age?"],
+            "tr": ["Kaç yaşındasın?", "Yaşın kaç?", "Yaşını söyleyebilir misin?", "Kaç yaşındasın?", "Yaşın kaç?"]
+          },
+          "responses": {
+            "en": ["I'm ageless, but I'm here to assist you with first aid. How can I help?", "Age doesn't apply to me, but I'm ready to help you. What do you need?", "I don't have an age, but I can assist you with first aid. How can I help?", "I'm timeless, but here to help you. What do you need?", "I don't age, but I'm here for your first aid needs. How can I assist?"],
+            "tr": ["Yaşsızım, ama size ilk yardım konusunda yardımcı olmak için buradayım. Nasıl yardımcı olabilirim?", "Yaşım yok, ama size yardımcı olmaya hazırım. Ne ihtiyacınız var?", "Yaşım yok, ama size ilk yardım konusunda yardımcı olabilirim. Nasıl yardımcı olabilirim?", "Zamansızım, ama size yardımcı olmak için buradayım. Ne ihtiyacınız var?", "Yaşlanmam, ama ilk yardım ihtiyaçlarınız için buradayım. Nasıl yardımcı olabilirim?"]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "smalltalk_favorite_color",
+          "patterns": {
+            "en": ["What's your favorite color?", "Do you have a favorite color?", "Can you tell me your favorite color?", "What color do you like?", "What is your favorite color?"],
+            "tr": ["En sevdiğin renk nedir?", "Favori bir rengin var mı?", "Favori rengini söyleyebilir misin?", "Hangi rengi seviyorsun?", "En sevdiğin renk nedir?"]
+          },
+          "responses": {
+            "en": ["I don't have a favorite color, but I can assist you with first aid. How can I help?", "Colors are fascinating, but let's focus on first aid. How can I assist?", "I like all colors, but I'm here to help with first aid. What do you need?", "Every color is unique, but I'm here to assist with your first aid needs. How can I help?", "I appreciate all colors, but my purpose is to help you with first aid. How can I assist?"],
+            "tr": ["Favori bir rengim yok, ama size ilk yardım konusunda yardımcı olabilirim. Nasıl yardımcı olabilirim?", "Renkler büyüleyici, ama ilk yardıma odaklanalım. Nasıl yardımcı olabilirim?", "Tüm renkleri seviyorum, ama burada ilk yardımla ilgili yardım etmek için buradayım. Ne ihtiyacınız var?", "Her renk eşsizdir, ama ben ilk yardım ihtiyaçlarınızda size yardımcı olmak için buradayım. Nasıl yardımcı olabilirim?", "Tüm renkleri takdir ediyorum, ama amacım size ilk yardım konusunda yardımcı olmak. Nasıl yardımcı olabilirim?"]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "smalltalk_favorite_food",
+          "patterns": {
+            "en": ["What's your favorite food?", "Do you have a favorite food?", "Can you tell me your favorite food?", "What food do you like?", "What is your favorite food?"],
+            "tr": ["En sevdiğin yemek nedir?", "Favori bir yemeğin var mı?", "Favori yemeğini söyleyebilir misin?", "Hangi yemeği seviyorsun?", "En sevdiğin yemek nedir?"]
+          },
+          "responses": {
+            "en": ["I don't eat, but I can assist you with first aid. How can I help?", "Food is interesting, but let's focus on first aid. How can I assist?", "I don't have a favorite food, but I'm here to help with first aid. What do you need?", "Every food is unique, but I'm here to assist with your first aid needs. How can I help?", "I appreciate all types of food, but my purpose is to help you with first aid. How can I assist?"],
+            "tr": ["Yemek yemem, ama size ilk yardım konusunda yardımcı olabilirim. Nasıl yardımcı olabilirim?", "Yemek ilginç, ama ilk yardıma odaklanalım. Nasıl yardımcı olabilirim?", "Favori bir yemeğim yok, ama burada ilk yardımla ilgili yardım etmek için buradayım. Ne ihtiyacınız var?", "Her yemek eşsizdir, ama ben ilk yardım ihtiyaçlarınızda size yardımcı olmak için buradayım. Nasıl yardımcı olabilirim?", "Tüm yemekleri takdir ediyorum, ama amacım size ilk yardım konusunda yardımcı olmak. Nasıl yardımcı olabilirim?"]
+          },
+          "context_set": ""
+        },
+        {
+          "tag": "weather",
+          "patterns": {
+            "en": ["How's the weather?", "What's the weather like?", "Is it sunny outside?", "Is it raining?", "How's the weather today?"],
+            "tr": ["Hava nasıl?", "Hava nasıl görünüyor?", "Dışarısı güneşli mi?", "Yağmur yağıyor mu?", "Bugün hava nasıl?"]
+          },
+          "responses": {
+            "en": ["Please provide your location (city or town).", "Can you tell me your location (city or town) to get the weather information?", "I need your location (city or town) to provide the weather details."],
+            "tr": ["Lütfen konumunuzu (şehir veya kasaba) belirtin.", "Hava durumu bilgisini almak için konumunuzu (şehir veya kasaba) söyleyebilir misiniz?", "Hava durumu ayrıntılarını vermek için konumunuza (şehir veya kasaba) ihtiyacım var."]
+          },
+          "context_set": "ask_location"
+        }
+        
+        
+        
+   ]
+}
