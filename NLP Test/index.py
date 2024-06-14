@@ -8,7 +8,7 @@ from langdetect import detect
 import joblib
 
 # OpenWeatherMap API
-API_KEY = '0076d51a87207fc4278e35f6e201abcb'  # OpenWeatherMap API anahtarınızı buraya ekleyin
+API_KEY = ''  # OpenWeatherMap API anahtarınızı buraya ekleyin
 
 # Data seti yükle
 with open('./dataset.json', 'r', encoding='utf-8') as file:
