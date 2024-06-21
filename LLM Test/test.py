@@ -1,7 +1,12 @@
 import torch
 from torch import nn
 from torch.utils.data import Dataset, DataLoader
+from datasets import load_dataset
 
+
+dataset = load_dataset("Mursel/Turkish-wikipedia-10k")
+
+# SelfAttention Class
 class SelfAttention(nn.Module):
     def __init__(self, embed_size, heads):
         super(SelfAttention, self).__init__()
@@ -30,7 +35,7 @@ class SelfAttention(nn.Module):
         if mask is not None:
             energy = energy.masked_fill(mask == 0, float("-1e20"))
 
-        attention = torch.softmax(energy / (self.embed_size ** (1 / 2)), dim=3)
+        attention = torch.softmax(energy / (self.embed_size ** 0.5), dim=3)
         out = torch.einsum("nhql,nlhd->nqhd", [attention, values]).reshape(
             N, query_len, self.heads * self.head_dim
         )
@@ -38,6 +43,7 @@ class SelfAttention(nn.Module):
         out = self.fc_out(out)
         return out
 
+# TransformerBlock Class
 class TransformerBlock(nn.Module):
     def __init__(self, embed_size, heads, dropout, forward_expansion):
         super(TransformerBlock, self).__init__()
@@ -59,6 +65,7 @@ class TransformerBlock(nn.Module):
         out = self.dropout(self.norm2(forward + x))
         return out
 
+# Encoder Class
 class Encoder(nn.Module):
     def __init__(self, src_vocab_size, embed_size, num_layers, heads, device, forward_expansion, dropout, max_length):
         super(Encoder, self).__init__()
@@ -83,6 +90,7 @@ class Encoder(nn.Module):
 
         return out
 
+# Transformer Class
 class Transformer(nn.Module):
     def __init__(self, src_vocab_size, embed_size, num_layers, heads, device, forward_expansion, dropout, max_length):
         super(Transformer, self).__init__()
@@ -94,26 +102,27 @@ class Transformer(nn.Module):
         output = self.fc_out(enc_src)
         return output
 
-
+# Device configuration
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-# Basit bir tokenizer fonksiyonu
+# Simple tokenizer function
 def simple_tokenizer(text):
     return text.split()
 
-# Örnek bir veri seti sınıfı
-class SimpleDataset(Dataset):
-    def __init__(self, sentences, tokenizer, max_length):
-        self.sentences = sentences
+class CombinedDataset(Dataset):
+    def __init__(self, data_qa, data_wiki, tokenizer, max_length):
+        self.data_qa = data_qa
+        self.data_wiki = data_wiki
         self.tokenizer = tokenizer
         self.max_length = max_length
         self.vocab = self.build_vocab()
-        
+
     def build_vocab(self):
-        unique_tokens = set(token for sentence in self.sentences for token in self.tokenizer(sentence))
+        unique_tokens = set(token for qa in self.data_qa for text in qa if isinstance(text, str) for token in self.tokenizer(text))
+        unique_tokens.update(token for text in self.data_wiki if isinstance(text, str) for token in self.tokenizer(text))
         vocab = {token: idx + 1 for idx, token in enumerate(unique_tokens)}
         vocab['<PAD>'] = 0
-        vocab['<MASK>'] = len(vocab)  # Mask tokeni ekle
+        vocab['<MASK>'] = len(vocab)
         return vocab
 
     def encode(self, text):
@@ -123,74 +132,52 @@ class SimpleDataset(Dataset):
         return padded_tokens
 
     def __len__(self):
-        return len(self.sentences)
+        return len(self.data_qa) + len(self.data_wiki)
 
     def __getitem__(self, idx):
-        sentence = self.sentences[idx]
-        encoded_sentence = self.encode(sentence)
-        return torch.tensor(encoded_sentence), torch.tensor(encoded_sentence)
+        if idx < len(self.data_qa):
+            qa_pair = self.data_qa[idx]
+            if len(qa_pair) != 2:
+                raise ValueError(f"QA pair does not have exactly two elements: {qa_pair}")
+            question, answer = qa_pair
+            encoded_question = self.encode(question)
+            encoded_answer = self.encode(answer)
+            return torch.tensor(encoded_question), torch.tensor(encoded_answer)
+        else:
+            text = self.data_wiki[idx - len(self.data_qa)]
+            encoded_text = self.encode(text)
+            return torch.tensor(encoded_text), torch.tensor(encoded_text)
 
-# Veri seti
-sentences = [
-    "Merhaba, bugün nasılsınız? Umarım keyifli bir gün geçiriyorsunuzdur.",
-    "Yapay zeka, bilgisayar bilimlerinin en heyecan verici dallarından biridir.",
-    "Bu kurs, Python programlama dilinde temel bilgileri öğretmeyi amaçlamaktadır.",
-    "Futbol, dünya genelinde en popüler sporlardan biridir.",
-    "İklim değişikliği, gezegenimiz için ciddi sonuçlar doğurabilir.",
-    "Dengeli bir diyet, sağlıklı bir yaşam tarzının olmazsa olmazıdır.",
-    "Küresel ekonomi, birçok ülkenin finansal sistemleri arasındaki etkileşime dayanır.",
-    "Sanat, insan duygularını ifade etmenin ve toplumsal mesajlar vermenin güçlü bir yoludur.",
-    "Bilgisayarlar, modern iş dünyasının vazgeçilmez bir parçası haline gelmiştir.",
-    "Sürdürülebilir kalkınma, ekonomik büyüme ile çevresel korumanın dengelenmesini gerektirir.",
-    "Kuantum bilgisayarlar, bilgi işlemde devrim yaratabilir.",
-    "Müzik, evrensel bir dil olarak kabul edilir ve insanları birleştiren bir güçtür.",
-    "Okyanuslar, dünya yüzeyinin yaklaşık yüzde yetmişini kaplar ve büyük bir biyoçeşitlilik sunar.",
-    "Edebiyat, toplumun aynası olarak görülebilir; toplumsal değişimlere ışık tutar.",
-    "Yenilenebilir enerji kaynakları, fosil yakıtlara bir alternatif sunar ve çevre üzerindeki etkileri azaltır.",
-    "Sağlık teknolojisi, medikal teşhis ve tedavi yöntemlerinde önemli ilerlemeler sağlamıştır.",
-    "Finans piyasaları, ekonomik istikrar için kritik öneme sahiptir ve sürekli olarak izlenir.",
-    "Eğitim, bireylerin kişisel ve mesleki gelişiminde temel bir rol oynar.",
-    "Siber güvenlik, dijital çağda veri korumanın önemini vurgular.",
-    "Uzay keşfi, insanlığın bilgi sınırlarını genişletir ve yeni dünyaları keşfetme olanağı sunar."
+
+# Load Wikipedia dataset
+wiki_dataset = load_dataset("Mursel/Turkish-wikipedia-10k")
+wiki_data = wiki_dataset['train']['content']
+
+# Question-answer dataset
+qa_data = [
+    ("Türk Tarih Kurumu nedir?", "Türk Tarih Kurumu, Atatürk tarafından 1931'de kurulmuştur."),
+    ("Yapay zeka nedir?", "Yapay zeka, insan zekasını taklit eden bilgisayar sistemleridir."),
+    ("Python programlama dili nedir?", "Python, yüksek seviyeli, genel amaçlı bir programlama dilidir."),
+    ("İklim değişikliği nedir?", "İklim değişikliği, uzun vadeli hava durumu değişikliklerini ifade eder."),
+    ("Blockchain teknolojisi nedir?", "Blockchain, verilerin güvenli ve merkezi olmayan bir şekilde saklanmasını sağlar."),
+    # Daha fazla soru-cevap eklenebilir
 ]
 
-additional_sentences = [
-    "Blockchain teknolojisi, finansal işlemlerin güvenliğini artırmada devrim yaratmıştır.",
-    "Yenilikçi teknolojiler, çevresel sürdürülebilirliği destekleme potansiyeline sahiptir.",
-    "Küresel ısınma, dünya çapında ciddi ekolojik ve sosyoekonomik etkilere neden olmaktadır.",
-    "Modern mimari, şehir planlaması ve sürdürülebilir tasarım arasındaki ilişki giderek artmaktadır.",
-    "Otonom araçlar, ulaşım sektöründe nasıl bir devrim yaratabilir?",
-    "Sanal gerçeklik, eğitimden eğlenceye birçok alanda kullanım olanakları sunar.",
-    "Yapay zekanın etik kullanımı, teknolojinin toplum üzerindeki etkilerini şekillendirmede kritik öneme sahiptir.",
-    "Genetik mühendisliği, tıbbi araştırmalarda yeni kapılar açmaktadır.",
-    "Robotik teknolojiler, üretim süreçlerini nasıl dönüştürmektedir?",
-    "Veri bilimi ve büyük veri analizi, iş kararları üzerinde giderek daha fazla etkiye sahiptir.",
-    "Günümüzün dijital dünyasında, veri güvenliği ve gizliliği kritik önem taşır.",
-    "Çevre dostu enerji kaynakları, fosil yakıtlara sürdürülebilir alternatifler sunar.",
-    "Küresel ticaret, ekonomilerin birbirine bağımlılığını artırır.",
-    "Yapay zeka algoritmaları, sağlık sektöründe devrim yaratacak potansiyele sahiptir.",
-    "Uzay teknolojileri, gelecekteki keşifler için kapıları aralamaktadır.",
-    "Dijital dönüşüm, iş dünyasında yeni fırsatlar yaratmaktadır.",
-    "E-ticaret, geleneksel perakende sektörünü yeniden şekillendirmektedir.",
-    "Sosyal medya, iletişim ve etkileşim biçimlerimizi kökten değiştirmiştir.",
-    "Bulut bilişim, veri depolama ve yönetiminde esneklik sağlar.",
-    "Giyilebilir teknoloji, günlük yaşamı daha kolay ve izlenebilir hale getirir."
-]
-sentences.extend(additional_sentences)
 
-dataset = SimpleDataset(sentences, simple_tokenizer, max_length=20)  # max_length artırıldı
-loader = DataLoader(dataset, batch_size=32, shuffle=True)
+max_length = 30
+combined_dataset = CombinedDataset(qa_data, wiki_data, simple_tokenizer, max_length)
+loader = DataLoader(combined_dataset, batch_size=32, shuffle=True)
 
 # Transformer modeli, optimizer ve loss fonksiyonunu tanımlama
 model = Transformer(
-    src_vocab_size=len(dataset.vocab),  # Kelime haznesi büyüklüğü
+    src_vocab_size=len(combined_dataset.vocab),  # Kelime haznesi büyüklüğü
     embed_size=256,                     # Gömme vektör boyutu
-    num_layers=4,                       # Transformer bloğundaki katman sayısı
+    num_layers=6,                       # Transformer bloğundaki katman sayısı
     heads=8,                            # Multi-head attention için başlık sayısı
     device=device,                      # Cihaz (CPU veya CUDA)
     forward_expansion=4,                # Feed-forward ağının genişleme oranı
     dropout=0.1,                        # Dropout oranı
-    max_length=20                       # Pozisyonel kodlama için maksimum uzunluk
+    max_length=max_length               # Pozisyonel kodlama için maksimum uzunluk
 ).to(device)
 
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
@@ -209,19 +196,19 @@ def train(model, data_loader, loss_fn, optimizer, device, vocab, epochs):
     model.train()
     for epoch in range(epochs):
         epoch_loss = 0
-        for inputs, _ in data_loader:  
-            inputs = inputs.to(device)
+        for inputs, targets in data_loader:
+            inputs, targets = inputs.to(device), targets.to(device)
             masked_inputs = random_masking(inputs, vocab)
             optimizer.zero_grad()
             outputs = model(masked_inputs, None)  # Maskelenmiş girdilerle modeli çalıştır
-            loss = loss_fn(outputs.view(-1, outputs.size(-1)), inputs.view(-1)) 
+            loss = loss_fn(outputs.view(-1, outputs.size(-1)), targets.view(-1))
             loss.backward()
             optimizer.step()
             epoch_loss += loss.item()
         print(f"Epoch {epoch + 1}, Loss: {epoch_loss / len(data_loader)}")
 
 # Modeli eğitme
-train(model, loader, loss_fn, optimizer, device, dataset.vocab, epochs=50)
+train(model, loader, loss_fn, optimizer, device, combined_dataset.vocab, epochs=50)
 
 # Tahmin yapma fonksiyonu
 def predict(model, sentence, vocab, max_length, device):
@@ -229,16 +216,17 @@ def predict(model, sentence, vocab, max_length, device):
     tokens = [vocab.get(token, vocab['<PAD>']) for token in simple_tokenizer(sentence)]
     padded_tokens = tokens[:max_length] + [vocab['<PAD>']] * (max_length - len(tokens))
     input_tensor = torch.tensor([padded_tokens], device=device)
-    
+
     with torch.no_grad():
         outputs = model(input_tensor, None)
-    
+
     predicted_indices = outputs.argmax(2).squeeze().tolist()
     predicted_tokens = [key for idx in predicted_indices for key, value in vocab.items() if value == idx]
-    
+
     return " ".join(predicted_tokens)
 
 # Örnek bir test cümlesi ile tahmin yapma
-test_sentence = "Robotlar gelecekte işgücünün hangi alanlarını dönüştürecek?"
-predicted_tokens = predict(model, test_sentence, dataset.vocab, max_length=20, device=device)
+test_sentence = "Türk Tarih Kurumu nedir?"
+predicted_tokens = predict(model, test_sentence, combined_dataset.vocab, max_length=30, device=device)
 print(f"Predicted continuation: {predicted_tokens}")
+
